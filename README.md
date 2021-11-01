@@ -1,6 +1,6 @@
 # CIS-550-Final-Project-MyHedgeFund
 
-# MyHedgeFund- Financial Data Aggregation and Insights tool
+MyHedgeFund- Financial Data Aggregation and Insights tool
 
 Group Members:
 
