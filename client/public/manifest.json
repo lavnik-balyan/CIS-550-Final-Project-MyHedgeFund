@@ -1,0 +1,15 @@
+{
+  "short_name": "MyHedgeFund Client",
+  "name": "CIS 550 Project - MyHedgeFund",
+  "icons": [
+    {
+      "src": "dollar-sign-svgrepo-com.svg",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#6495ED",
+  "background_color": "#ffffff"
+}
