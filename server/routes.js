@@ -470,6 +470,7 @@ async function sector(req, res) {
             console.log(error)
             res.json({ error: error })
         } else if (results) {
+            console.log(results)
             res.json({ results: results })
         }
     });

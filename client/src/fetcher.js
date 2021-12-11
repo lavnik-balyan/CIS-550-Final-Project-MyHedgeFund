@@ -56,21 +56,21 @@ const mostGrossing = async (year, sector, grossLow, grossHigh) => {
     return res.json()
 }
 
-const OpVsTax = async (year1, year2, sector) => {
+const opVsTax = async (year1, year2, sector) => {
     var res = await fetch(`http://${config.server_host}:${config.server_port}/OpVsTax/${year1}/${year2}?sector=${sector}`, {
         method: 'GET',
     })
     return res.json()
 }
 
-const ProfitGrowthPercentage = async (year1, year2, sector, percentLow, percentHigh) => {
+const profitGrowthPercentage = async (year1, year2, sector, percentLow, percentHigh) => {
     var res = await fetch(`http://${config.server_host}:${config.server_port}/ProfitGrowthPercentage/${year1}/${year2}?sector=${sector}?percentLow=${percentLow}?percentHigh=${percentHigh}`, {
         method: 'GET',
     })
     return res.json()
 }
 
-const PreTaxVsTaxes = async (year1, year2, sector) => {
+const preTaxVsTaxes = async (year1, year2, sector) => {
     var res = await fetch(`http://${config.server_host}:${config.server_port}/PreTaxVsTaxes/${year1}/${year2}?sector=${sector}`, {
         method: 'GET',
     })
@@ -85,8 +85,8 @@ export {
     tickerETF,
     comparingCompanies,
     sector, 
-    MostGrossing, 
-    OpVsTax, 
-    ProfitGrowthPercentage, 
-    PreTaxVsTaxes
+    mostGrossing, 
+    opVsTax, 
+    profitGrowthPercentage, 
+    preTaxVsTaxes
 }
