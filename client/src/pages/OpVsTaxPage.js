@@ -64,9 +64,15 @@ class OpVsTaxPage extends React.Component {
         return (
             <div>
                 <MenuBar />
-                <div style={{ backgroundColor: 'lightcyan', width: '100vw', margin: '0 auto', marginTop: '2vh' }}>
+                <div style={{ backgroundColor: '#BFFFD1', width: '100vw', margin: '0 auto', marginTop: '0vh' }}>
                 <br/>
                 <div style={{ textAlign: 'center' }}><h3>Operating Expenses</h3></div>
+                <br />
+                <div style={{ textAlign: 'left', width: '50vw', margin: '0 auto', marginTop: '0vh'}}>
+                    <p><b>Returns the percentage of companies that had increasing operating expenses between year1 and year2 and experienced an increase in gross profit that was less than their operating expense increase in those years. </b></p>
+                    <p>If a sector is provided, only the percentage of companies in that given sector will be provided.</p>
+                </div>
+                <Divider />
                 <Form style={{ width: '80vw', margin: '0 auto', paddingBottom: '2vh'}}>
                     <Row>
                         <Col flex={2}><FormGroup style={{ width: '20vw', margin: '0 auto' }}>
@@ -82,13 +88,14 @@ class OpVsTaxPage extends React.Component {
                             <FormInput placeholder="Sector" value={this.state.sectorQuery} onChange={this.handleSectorQueryChange} />
                         </FormGroup></Col>
                         <Col flex={2}><FormGroup style={{ width: '10vw', margin: '0 auto' }}>
-                            <Button style={{ width: "100%", marginTop: '3.25vh' }} onClick={this.updateSearchResults}>Search</Button>
+                            <Button style={{ width: "80%", position: 'absolute', bottom: '0px' }} onClick={this.updateSearchResults}>Search</Button>
                         </FormGroup></Col>
                     </Row>
                 </Form>
+                <br/>
                 <Table onRow={(record, rowIndex) => {
     return {
-      onClick: event => {this.goToTicker(record.tickerId)},  
+      onClick: event => {this.goToTicker(record.Ticker)},  
     };
   }} dataSource={this.state.tickerResults} pagination={{ pageSizeOptions:[5, 10], defaultPageSize: 5, showQuickJumper:true }}> 
             <Column title="Percentage" dataIndex="Percentage" key="Percentage" />

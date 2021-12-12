@@ -58,9 +58,13 @@ class SectorPage extends React.Component {
         return (
             <div>
                 <MenuBar />
-                <div style={{ backgroundColor: 'lightcyan', width: '100vw', margin: '0 auto', marginTop: '2vh' }}>
+                <div style={{ backgroundColor: '#BFFFD1', width: '100vw', margin: '0 auto', marginTop: '0vh' }}>
                 <br/>
                 <div style={{ textAlign: 'center' }}><h3>Sectors</h3></div>
+                <div style={{ textAlign: 'center' }}>
+                    <p><b>Returns an array of selected attributes for matches that match the search query.</b></p>
+                </div>
+                <Divider />
                 <Form style={{ width: '60vw', margin: '0 auto', paddingBottom: '2vh'}}>
                     <Row>
                         <Col flex={2}><FormGroup style={{ width: '20vw', margin: '0 auto' }}>
@@ -72,13 +76,14 @@ class SectorPage extends React.Component {
                             <FormInput placeholder="Year" value={this.state.yearQuery} onChange={this.handleYearQueryChange} />
                         </FormGroup></Col>
                         <Col flex={2}><FormGroup style={{ width: '10vw', margin: '0 auto' }}>
-                            <Button style={{ width: "100%", marginTop: '3.25vh' }} onClick={this.updateSearchResults}>Search</Button>
+                            <Button style={{ width: "80%", position: 'absolute', bottom: '0px' }} onClick={this.updateSearchResults}>Search</Button>
                         </FormGroup></Col>
                     </Row>
                 </Form>
+                <br/>
                 <Table onRow={(record, rowIndex) => {
     return {
-      onClick: event => {this.goToTicker(record.tickerId)},  
+      onClick: event => {this.goToTicker(record.Ticker)},  
     };
   }} dataSource={this.state.tickerResults} pagination={{ pageSizeOptions:[5, 10], defaultPageSize: 5, showQuickJumper:true }}> 
             <Column title="Ticker" dataIndex="Ticker" key="Ticker" sorter= {(a, b) => a.Ticker.localeCompare(b.Ticker)}/>

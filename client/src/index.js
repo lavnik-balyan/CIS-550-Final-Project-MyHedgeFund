@@ -22,6 +22,7 @@ import MostGrossingPage from './pages/MostGrossingPage';
 import OpVsTaxPage from './pages/OpVsTaxPage';
 import ProfitGrowthPercentagePage from './pages/ProfitGrowthPercentagePage';
 import PreTaxVsTaxesPage from './pages/PreTaxVsTaxesPage';
+import CompanyPage from './pages/CompanyPage';
 
 ReactDOM.render(
   <div>
@@ -36,6 +37,11 @@ ReactDOM.render(
 							path="/tickerFundamentals"
 							render={() => (
 								<TickerFundamentalsPage />
+							)}/>
+		<Route exact
+							path="/tickerFundamentals/:tick"
+							render={(props) => (
+								<CompanyPage {...props} />
 							)}/>
         <Route exact
 							path="/tickerCompetitors"

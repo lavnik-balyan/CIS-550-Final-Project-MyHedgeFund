@@ -49,7 +49,7 @@ class HomePage extends React.Component {
     return (
       <div>
         <MenuBar />
-        <div style={{ backgroundColor: 'lightcyan', width: '100vw', margin: '0 auto', marginTop: '2vh' }}>
+        <div style={{ backgroundColor: '#BFFFD1', width: '100vw', margin: '0 auto', marginTop: '0vh' }}>
         <br/>
         <div style={{ textAlign: 'center' }}><h3>Companies</h3>
           <p><b>Choose a Sector: </b><Select defaultValue="Communication Services" style={{ width: 200 }} onChange={this.sectorOnChange}>

@@ -16,17 +16,13 @@ import MenuBar from '../components/MenuBar';
 
 const { Column, ColumnGroup } = Table;
 
-class TickerFundamentalsPage extends React.Component {
+export default class CompanyPage extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            tickerQuery: "",
-            yearQuery: "",
+            tickerQuery: this.props.match.params.tick,
             tickerResults: []
         }
-        this.handleTickerQueryChange = this.handleTickerQueryChange.bind(this)
-        this.handleYearQueryChange = this.handleYearQueryChange.bind(this)
-        this.updateSearchResults = this.updateSearchResults.bind(this)
         this.goToTicker = this.goToTicker.bind(this)
     }
 
@@ -34,21 +30,8 @@ class TickerFundamentalsPage extends React.Component {
         window.location = `/tickerFundamentals/${tickerId}`
     }
 
-    handleTickerQueryChange(event) {
-        this.setState({ tickerQuery: event.target.value })
-    }
-
-    handleYearQueryChange(event) {
-        this.setState({ yearQuery: event.target.value })
-    }
-
-    updateSearchResults() {
-        tickerFundamentals(this.state.tickerQuery, this.state.yearQuery).then(res => {
-            this.setState({ tickerResults: res.results })
-        })
-    }
-
     componentDidMount() {
+        console.log(this.props.match.params.tick)
         tickerFundamentals(this.state.tickerQuery, this.state.yearQuery).then(res => {
             this.setState({ tickerResults: res.results })
         })
@@ -59,29 +42,9 @@ class TickerFundamentalsPage extends React.Component {
             <div>
                 <MenuBar />
                 <div style={{ backgroundColor: '#BFFFD1', width: '100vw', margin: '0 auto', marginTop: '0vh' }}>
-                <br/>
-                <div style={{ textAlign: 'center' }}><h3>Fundamentals</h3></div>
-                <div style={{ textAlign: 'center' }}>
-                    <p><b>Returns the financial information for a particular company for all available years 
-                    (unless a specific year is queried).</b></p>
-                </div>
-                <Divider />
-                <Form style={{ width: '60vw', margin: '0 auto', paddingBottom: '2vh'}}>
-                    <Row>
-                        <Col flex={2}><FormGroup style={{ width: '20vw', margin: '0 auto' }}>
-                            <label>Ticker</label>
-                            <FormInput placeholder="Ticker" value={this.state.tickerQuery} onChange={this.handleTickerQueryChange} />
-                        </FormGroup></Col>
-                        <Col flex={2}><FormGroup style={{ width: '20vw', margin: '0 auto' }}>
-                            <label>Year</label>
-                            <FormInput placeholder="Year" value={this.state.yearQuery} onChange={this.handleYearQueryChange} />
-                        </FormGroup></Col>
-                        <Col flex={2}><FormGroup style={{ width: '10vw', margin: '0 auto' }}>
-                            <Button style={{ width: "80%", position: 'absolute', bottom: '0px' }} onClick={this.updateSearchResults}>Search</Button>
-                        </FormGroup></Col>
-                    </Row>
-                </Form>
-                <br/>
+                <br />
+                <div style={{ textAlign: 'center', paddingTop: '10px'}}><h3>Fundamentals for {this.props.match.params.tick}</h3></div>
+                <br />
                 <Table onRow={(record, rowIndex) => {
     return {
       onClick: event => {this.goToTicker(record.Ticker)},  
@@ -106,5 +69,3 @@ class TickerFundamentalsPage extends React.Component {
         )
     }
 }
-
-export default TickerFundamentalsPage
