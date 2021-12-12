@@ -76,34 +76,36 @@ class ProfitGrowthPercentagePage extends React.Component {
         return (
             <div>
                 <MenuBar />
-                <Form style={{ backgroundColor: 'lightcyan', width: '80vw', margin: '0 auto', marginTop: '5vh' }}>
+                <div style={{ backgroundColor: 'lightcyan', width: '100vw', margin: '0 auto', marginTop: '2vh' }}>
+                <br/>
+                <div style={{ textAlign: 'center' }}><h3>Profit Growth</h3></div>
+                <Form style={{ margin: '0 auto', paddingBottom: '2vh'}}>
                     <Row>
-                        <Col flex={2}><FormGroup style={{ width: '20vw', margin: '0 auto' }}>
+                        <Col flex={2}><FormGroup style={{ width: '15vw', margin: '0 auto' }}>
                             <label>Year 1</label>
                             <FormInput placeholder="Year 1" value={this.state.year1Query} onChange={this.handleYear1QueryChange} />
                         </FormGroup></Col>
-                        <Col flex={2}><FormGroup style={{ width: '20vw', margin: '0 auto' }}>
+                        <Col flex={2}><FormGroup style={{ width: '15vw', margin: '0 auto' }}>
                             <label>Year 2</label>
                             <FormInput placeholder="Year 2" value={this.state.year2Query} onChange={this.handleYear2QueryChange} />
                         </FormGroup></Col>
-                        <Col flex={2}><FormGroup style={{ width: '20vw', margin: '0 auto' }}>
+                        <Col flex={2}><FormGroup style={{ width: '15vw', margin: '0 auto' }}>
                             <label>Sector</label>
                             <FormInput placeholder="Sector" value={this.state.SectorQuery} onChange={this.handleSectorQueryChange} />
                         </FormGroup></Col>
-                        <Col flex={2}><FormGroup style={{ width: '20vw', margin: '0 auto' }}>
+                        <Col flex={2}><FormGroup style={{ width: '15vw', margin: '0 auto' }}>
                             <label>Low Percentage</label>
                             <FormInput placeholder="percentLowQuery" value={this.state.percentLowQuery} onChange={this.handlePercentLowQueryChange} />
                         </FormGroup></Col>
-                        <Col flex={2}><FormGroup style={{ width: '20vw', margin: '0 auto' }}>
+                        <Col flex={2}><FormGroup style={{ width: '15vw', margin: '0 auto' }}>
                             <label>High Percentage</label>
                             <FormInput placeholder="percentHighQuery" value={this.state.percentHighQuery} onChange={this.handlePercentHighQueryChange} />
                         </FormGroup></Col>
-                        <Col flex={2}><FormGroup style={{ width: '10vw' }}>
-                            <Button style={{ marginTop: '4vh' }} onClick={this.updateSearchResults}>Search</Button>
+                        <Col flex={2}><FormGroup style={{ width: '10vw', margin: '0 auto' }}>
+                            <Button style={{ width: "100%", marginTop: '3.25vh' }} onClick={this.updateSearchResults}>Search</Button>
                         </FormGroup></Col>
                     </Row>
                 </Form>
-                <Divider />
                 <Table onRow={(record, rowIndex) => {
     return {
       onClick: event => {this.goToTicker(record.tickerId)},  
@@ -113,6 +115,7 @@ class ProfitGrowthPercentagePage extends React.Component {
             <Column title="Name" dataIndex="Name" key="Name" sorter= {(a, b) => a.Name.localeCompare(b.Name)}/>
             <Column title="Growth Rate" dataIndex="GROWTHRATE" key="GROWTHRATE" sorter= {(a, b) => a.GROWTHRATE.localeCompare(b.GROWTHRATE)}/>
           </Table>
+        </div>
         </div>
         )
     }

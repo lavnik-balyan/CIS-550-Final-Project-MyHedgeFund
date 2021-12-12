@@ -70,7 +70,10 @@ class MostGrossingPage extends React.Component {
         return (
             <div>
                 <MenuBar />
-                <Form style={{ backgroundColor: 'lightcyan', width: '80vw', margin: '0 auto', marginTop: '5vh' }}>
+                <div style={{ backgroundColor: 'lightcyan', width: '100vw', margin: '0 auto', marginTop: '2vh' }}>
+                <br/>
+                <div style={{ textAlign: 'center' }}><h3>Most Grossing Companies</h3></div>
+                <Form style={{ width: '100vw', margin: '0 auto', paddingBottom: '2vh'}}>
                     <Row>
                         <Col flex={2}><FormGroup style={{ width: '20vw', margin: '0 auto' }}>
                             <label>Sector</label>
@@ -88,12 +91,11 @@ class MostGrossingPage extends React.Component {
                             <label>High Gross Profit</label>
                             <FormInput placeholder="highGross" value={this.state.grossHighQuery} onChange={this.handleGrossHighQueryChange} />
                         </FormGroup></Col>
-                        <Col flex={2}><FormGroup style={{ width: '10vw' }}>
-                            <Button style={{ marginTop: '4vh' }} onClick={this.updateSearchResults}>Search</Button>
+                        <Col flex={2}><FormGroup style={{ width: '10vw', margin: '0 auto' }}>
+                            <Button style={{ width: "100%", marginTop: '3.25vh' }} onClick={this.updateSearchResults}>Search</Button>
                         </FormGroup></Col>
                     </Row>
                 </Form>
-                <Divider />
                 <Table onRow={(record, rowIndex) => {
     return {
       onClick: event => {this.goToTicker(record.tickerId)},  
@@ -105,6 +107,7 @@ class MostGrossingPage extends React.Component {
             <Column title="Gross Profit" dataIndex="Gross_Profit" key="Gross_Profit" sorter= {(a, b) => a.Gross_Profit.localeCompare(b.Gross_Profit)}/>
             <Column title="Year" dataIndex="Year" key="Year" sorter= {(a, b) => a.Year.localeCompare(b.Year)}/>
           </Table>
+        </div>
         </div>
         )
     }

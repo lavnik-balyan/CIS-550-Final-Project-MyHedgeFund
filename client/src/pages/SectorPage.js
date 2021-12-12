@@ -58,7 +58,10 @@ class SectorPage extends React.Component {
         return (
             <div>
                 <MenuBar />
-                <Form style={{ backgroundColor: 'lightcyan', width: '80vw', margin: '0 auto', marginTop: '5vh' }}>
+                <div style={{ backgroundColor: 'lightcyan', width: '100vw', margin: '0 auto', marginTop: '2vh' }}>
+                <br/>
+                <div style={{ textAlign: 'center' }}><h3>Sectors</h3></div>
+                <Form style={{ width: '60vw', margin: '0 auto', paddingBottom: '2vh'}}>
                     <Row>
                         <Col flex={2}><FormGroup style={{ width: '20vw', margin: '0 auto' }}>
                             <label>Sector</label>
@@ -68,12 +71,11 @@ class SectorPage extends React.Component {
                             <label>Year</label>
                             <FormInput placeholder="Year" value={this.state.yearQuery} onChange={this.handleYearQueryChange} />
                         </FormGroup></Col>
-                        <Col flex={2}><FormGroup style={{ width: '10vw' }}>
-                            <Button style={{ marginTop: '4vh' }} onClick={this.updateSearchResults}>Search</Button>
+                        <Col flex={2}><FormGroup style={{ width: '10vw', margin: '0 auto' }}>
+                            <Button style={{ width: "100%", marginTop: '3.25vh' }} onClick={this.updateSearchResults}>Search</Button>
                         </FormGroup></Col>
                     </Row>
                 </Form>
-                <Divider />
                 <Table onRow={(record, rowIndex) => {
     return {
       onClick: event => {this.goToTicker(record.tickerId)},  
@@ -93,6 +95,7 @@ class SectorPage extends React.Component {
             <Column title="Pre-Tax Income" dataIndex="PreTax_Income" key="PreTax_Income" sorter= {(a, b) => a.PreTax_Income.localeCompare(b.PreTax_Income)}/>
             <Column title="Tax Provision" dataIndex="Tax_Provision" key="Tax_Provision" sorter= {(a, b) => a.Tax_Provision.localeCompare(b.Tax_Provision)}/>
           </Table>
+        </div>
         </div>
         )
     }

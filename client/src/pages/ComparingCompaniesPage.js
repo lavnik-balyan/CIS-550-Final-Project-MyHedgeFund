@@ -70,7 +70,10 @@ class ComparingCompaniesPage extends React.Component {
         return (
             <div>
                 <MenuBar />
-                <Form style={{ backgroundColor: 'lightcyan', width: '80vw', margin: '0 auto', marginTop: '5vh' }}>
+                <div style={{ backgroundColor: 'lightcyan', width: '100vw', margin: '0 auto', marginTop: '2vh' }}>
+                <br/>
+                <div style={{ textAlign: 'center' }}><h3>Comparing Companies</h3></div>
+                <Form style={{ width: '100vw', margin: '0 auto', paddingBottom: '2vh'}}>
                     <Row>
                         <Col flex={2}><FormGroup style={{ width: '20vw', margin: '0 auto' }}>
                             <label>Sector</label>
@@ -88,12 +91,11 @@ class ComparingCompaniesPage extends React.Component {
                             <label>Year</label>
                             <FormInput placeholder="Year" value={this.state.yearQuery} onChange={this.handleYearQueryChange} />
                         </FormGroup></Col>
-                        <Col flex={2}><FormGroup style={{ width: '10vw' }}>
-                            <Button style={{ marginTop: '4vh' }} onClick={this.updateSearchResults}>Search</Button>
+                        <Col flex={2}><FormGroup style={{ width: '10vw', margin: '0 auto' }}>
+                            <Button style={{ width: "100%", marginTop: '3.25vh' }} onClick={this.updateSearchResults}>Search</Button>
                         </FormGroup></Col>
                     </Row>
                 </Form>
-                <Divider />
                 <Table onRow={(record, rowIndex) => {
     return {
       onClick: event => {this.goToTicker(record.tickerId)},  
@@ -107,6 +109,7 @@ class ComparingCompaniesPage extends React.Component {
             <Column title="Operating Expense" dataIndex="Operating_Expense" key="Operating_Expense" sorter= {(a, b) => a.Operating_Expense.localeCompare(b.Operating_Expense)}/>
             <Column title="Operating Income" dataIndex="Operating_Income" key="Operating_Income" sorter= {(a, b) => a.Operating_Income.localeCompare(b.Operating_Income)}/>
           </Table>
+        </div>
         </div>
         )
     }

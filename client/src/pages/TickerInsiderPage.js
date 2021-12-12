@@ -52,18 +52,20 @@ class TickerInsiderPage extends React.Component {
         return (
             <div>
                 <MenuBar />
-                <Form style={{ backgroundColor: 'lightcyan', width: '80vw', margin: '0 auto', marginTop: '5vh' }}>
+                <div style={{ backgroundColor: 'lightcyan', width: '100vw', margin: '0 auto', marginTop: '2vh' }}>
+                <br/>
+                <div style={{ textAlign: 'center' }}><h3>Insider Activity</h3></div>
+                <Form style={{ width: '40vw', margin: '0 auto', paddingBottom: '2vh'}}>
                     <Row>
                         <Col flex={2}><FormGroup style={{ width: '20vw', margin: '0 auto' }}>
                             <label>Ticker</label>
                             <FormInput placeholder="Ticker" value={this.state.tickerQuery} onChange={this.handleTickerQueryChange} />
                         </FormGroup></Col>
-                        <Col flex={2}><FormGroup style={{ width: '10vw' }}>
-                            <Button style={{ marginTop: '4vh' }} onClick={this.updateSearchResults}>Search</Button>
+                        <Col flex={2}><FormGroup style={{ width: '10vw', margin: '0 auto' }}>
+                            <Button style={{ width: "100%", marginTop: '3.25vh' }} onClick={this.updateSearchResults}>Search</Button>
                         </FormGroup></Col>
                     </Row>
                 </Form>
-                <Divider />
                 <Table onRow={(record, rowIndex) => {
     return {
       onClick: event => {this.goToTicker(record.tickerId)},  
@@ -78,6 +80,7 @@ class TickerInsiderPage extends React.Component {
             <Column title="Owned" dataIndex="Owned" key="Owned" sorter= {(a, b) => a.Owned.localeCompare(b.Owned)}/>
             <Column title="Value" dataIndex="Value" key="Value" sorter= {(a, b) => a.Value.localeCompare(b.Value)}/>
           </Table>
+        </div>
         </div>
         )
     }

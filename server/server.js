@@ -3,8 +3,12 @@ const mysql      = require('mysql');
 
 const routes = require('./routes')
 const config = require('./config.json')
+const cors = require('cors');
 
 const app = express();
+app.use(cors({
+    origin: '*'
+}));
 
 // Routes for 550 FINAL PROJECT
 
