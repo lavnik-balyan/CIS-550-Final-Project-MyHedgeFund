@@ -99,8 +99,8 @@ class PreTaxVsTaxesPage extends React.Component {
     };
   }} dataSource={this.state.tickerResults} pagination={{ pageSizeOptions:[5, 10], defaultPageSize: 5, showQuickJumper:true }}>
             <Column title="Ticker" dataIndex="Ticker" key="Ticker" sorter= {(a, b) => a.Ticker.localeCompare(b.Ticker)}/> 
-            <Column title="Tax Provision % Increase" dataIndex="TaxProvisionIncreasePercentage" key="TaxProvisionIncreasePercentage" sorter= {(a, b) => a.TaxProvisionIncreasePercentage.localeCompare(b.TaxProvisionIncreasePercentage)}/>
-            <Column title="Pre-Tax Income % Increase" dataIndex="PreTaxIncomeIncreasePercentage" key="PreTaxIncomeIncreasePercentage" sorter= {(a, b) => a.PreTaxIncomeIncreasePercentage.localeCompare(b.PreTaxIncomeIncreasePercentage)}/>
+            <Column title="Tax Provision % Increase" dataIndex="TaxProvisionIncreasePercentage" key="TaxProvisionIncreasePercentage" sorter= {(a, b) => a.TaxProvisionIncreasePercentage - b.TaxProvisionIncreasePercentage}/>
+            <Column title="Pre-Tax Income % Increase" dataIndex="PreTaxIncomeIncreasePercentage" key="PreTaxIncomeIncreasePercentage" sorter= {(a, b) => a.PreTaxIncomeIncreasePercentage - b.PreTaxIncomeIncreasePercentage}/>
           </Table>
         </div>
         </div>

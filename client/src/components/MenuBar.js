@@ -35,12 +35,12 @@ class MenuBar extends React.Component {
             </NavItem>
             <NavItem>
               <NavLink active href="/tickerInsider">
-                Insider
+                Insider Activity
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink active href="/tickerETF">
-                ETF
+                ETFs
               </NavLink>
             </NavItem>
             <NavItem>
@@ -50,27 +50,27 @@ class MenuBar extends React.Component {
             </NavItem>
             <NavItem>
               <NavLink active href="/sector">
-                Sector
+                Sectors
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink active href="/mostGrossing">
-                MostGrossing
+                Gross Profits
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink active href="/opVsTax">
-               opVsTax
+               Operating Expenses
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink active href="/profitGrowthPercentage">
-                Growth
+                Profit Growth
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink active href="/preTaxVsTaxes">
-              preTaxVsTaxes
+              PreTax Income vs. Taxes
               </NavLink>
             </NavItem>
           </Nav>

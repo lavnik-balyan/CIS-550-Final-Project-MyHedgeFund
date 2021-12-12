@@ -81,9 +81,9 @@ class TickerInsiderPage extends React.Component {
             <Column title="Insider Name" dataIndex="InsiderName" key="InsiderName" sorter= {(a, b) => a.InsiderName.localeCompare(b.InsiderName)}/>
             <Column title="Title" dataIndex="Title" key="Title" />
             <Column title="Type" dataIndex="Type" key="Type" />
-            <Column title="Price" dataIndex="Price" key="Price" sorter= {(a, b) => a.Price.localeCompare(b.Price)}/>
-            <Column title="Owned" dataIndex="Owned" key="Owned" sorter= {(a, b) => a.Owned.localeCompare(b.Owned)}/>
-            <Column title="Value" dataIndex="Value" key="Value" sorter= {(a, b) => a.Value.localeCompare(b.Value)}/>
+            <Column title="Price" dataIndex="Price" key="Price" sorter= {(a, b) => a.Price - b.Price}/>
+            <Column title="Owned" dataIndex="Owned" key="Owned" sorter= {(a, b) => a.Owned - b.Owned}/>
+            <Column title="Value" dataIndex="Value" key="Value" sorter= {(a, b) => a.Value - b.Value}/>
           </Table>
         </div>
         </div>

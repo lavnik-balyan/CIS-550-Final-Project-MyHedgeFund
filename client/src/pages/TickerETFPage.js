@@ -80,8 +80,8 @@ class TickerETFPage extends React.Component {
             <Column title="ETF Ticker" dataIndex="ETFTicker" key="ETFTicker" sorter= {(a, b) => a.ETFTicker.localeCompare(b.ETFTicker)}/>
             <Column title="ETF Name" dataIndex="ETFName" key="ETFName" sorter= {(a, b) => a.ETFName.localeCompare(b.ETFName)}/>
             <Column title="Category" dataIndex="Category" key="Category" sorter= {(a, b) => a.Category.localeCompare(b.Category)}/>
-            <Column title="Expense Ratio" dataIndex="ExpenseRatio" key="ExpenseRatio" sorter= {(a, b) => a.ExpenseRatio.localeCompare(b.ExpenseRatio)}/>
-            <Column title="Weightage" dataIndex="Weightage" key="Weightage" sorter= {(a, b) => a.Weightage.localeCompare(b.Weightage)}/>
+            <Column title="Expense Ratio" dataIndex="ExpenseRatio" key="ExpenseRatio" sorter= {(a, b) => a.ExpenseRatio - b.ExpenseRatio}/>
+            <Column title="Weightage" dataIndex="Weightage" key="Weightage" sorter= {(a, b) => a.Weightage - b.Weightage}/>
           </Table>
         </div>
         </div>
