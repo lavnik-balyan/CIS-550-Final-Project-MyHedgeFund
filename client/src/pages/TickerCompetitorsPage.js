@@ -56,7 +56,7 @@ class TickerCompetitorsPage extends React.Component {
                 <br/>
                 <div style={{ textAlign: 'center' }}><h3>Competitors</h3></div>
                 <div style={{ textAlign: 'center' }}>
-                    <p><b>Returns the most relevant comparative information about two stocks in the same sector.</b></p>
+                    <p><b>Returns the top 10 competitors of a company by total revenue.</b></p>
                 </div>
                 <Divider />
                 <Form style={{ width: '40vw', margin: '0 auto', paddingBottom: '2vh'}}>
