@@ -64,7 +64,7 @@ const opVsTax = async (year1, year2, sector) => {
 }
 
 const profitGrowthPercentage = async (year1, year2, sector, percentLow, percentHigh) => {
-    var res = await fetch(`http://${config.server_host}:${config.server_port}/ProfitGrowthPercentage/${year1}/${year2}?sector=${sector}?percentLow=${percentLow}?percentHigh=${percentHigh}`, {
+    var res = await fetch(`http://${config.server_host}:${config.server_port}/ProfitGrowthPercentage/${year1}/${year2}?sector=${sector}&percentLow=${percentLow}&percentHigh=${percentHigh}`, {
         method: 'GET',
     })
     return res.json()

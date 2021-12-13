@@ -114,11 +114,12 @@ class ProfitGrowthPercentagePage extends React.Component {
                 </Form>
                 <br/>
                 <Table onRow={(record, rowIndex) => {
+                    console.log(record)
     return {
-      onClick: event => {this.goToTicker(record.Ticker)},  
+      onClick: event => {this.goToTicker(record.TICKER)},  
     };
   }} dataSource={this.state.tickerResults} pagination={{ pageSizeOptions:[5, 10], defaultPageSize: 5, showQuickJumper:true }}> 
-            <Column title="Ticker" dataIndex="Ticker" key="Ticker" sorter= {(a, b) => a.Ticker.localeCompare(b.Ticker)}/>
+            <Column title="Ticker" dataIndex="TICKER" key="Ticker" sorter= {(a, b) => a.Ticker.localeCompare(b.Ticker)}/>
             <Column title="Name" dataIndex="Name" key="Name" sorter= {(a, b) => a.Name.localeCompare(b.Name)}/>
             <Column title="Growth Rate" dataIndex="GROWTHRATE" key="GROWTHRATE" sorter= {(a, b) => a.GROWTHRATE - b.GROWTHRATE}/>
           </Table>
