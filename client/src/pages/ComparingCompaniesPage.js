@@ -84,7 +84,7 @@ class ComparingCompaniesPage extends React.Component {
                         <Col flex={2}><FormGroup style={{ width: '20vw', margin: '0 auto' }}>
                             <label>Sector</label>
                             <br />
-                            <Select defaultValue="Communication Services" style={{ width: '20vw', position: 'absolute', bottom: '0px' }} onChange={this.handleSectorQueryChange}>
+                            <Select defaultValue="--------------- Select ---------------" style={{ width: '20vw', position: 'absolute', bottom: '0px' }} onChange={this.handleSectorQueryChange}>
                                 <Option value="Communication Services">Communication Services</Option>
                                 <Option value="Consumer Discretionary">Consumer Discretionary</Option>
                                 <Option value="Consumer Staples">Consumer Staples</Option>
