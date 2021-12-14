@@ -7,7 +7,7 @@ import {
     Row,
     Col,
     Divider,
-
+    Select,
 } from 'antd'
 
 import { mostGrossing } from '../fetcher'
@@ -15,6 +15,8 @@ import { mostGrossing } from '../fetcher'
 import MenuBar from '../components/MenuBar';
 
 const { Column, ColumnGroup } = Table;
+
+const { Option } = Select;
 
 class MostGrossingPage extends React.Component {
     constructor(props) {
@@ -39,7 +41,7 @@ class MostGrossingPage extends React.Component {
     }
 
     handleSectorQueryChange(event) {
-        this.setState({ sectorQuery: event.target.value })
+        this.setState({ sectorQuery: event })
     }
 
     handleYearQueryChange(event) {
@@ -84,7 +86,20 @@ class MostGrossingPage extends React.Component {
                     <Row>
                         <Col flex={2}><FormGroup style={{ width: '20vw', margin: '0 auto' }}>
                             <label>Sector</label>
-                            <FormInput placeholder="Sector" value={this.state.SectorQuery} onChange={this.handleSectorQueryChange} />
+                            <br />
+                            <Select defaultValue="--------------- Select ---------------" style={{ width: '20vw', position: 'absolute', bottom: '0px' }} onChange={this.handleSectorQueryChange}>
+                                <Option value="Communication Services">Communication Services</Option>
+                                <Option value="Consumer Discretionary">Consumer Discretionary</Option>
+                                <Option value="Consumer Staples">Consumer Staples</Option>
+                                <Option value="Energy">Energy</Option>
+                                <Option value="Financials">Financials</Option>
+                                <Option value="Health Care">Health Care</Option>
+                                <Option value="Industrials">Industrials</Option>
+                                <Option value="Information Technology">Information Technology</Option>
+                                <Option value="Materials">Materials</Option>
+                                <Option value="Real Estate">Real Estate</Option>
+                                <Option value="Utilities">Utilities</Option>
+                            </Select>
                         </FormGroup></Col>
                         <Col flex={2}><FormGroup style={{ width: '20vw', margin: '0 auto' }}>
                             <label>Year</label>
