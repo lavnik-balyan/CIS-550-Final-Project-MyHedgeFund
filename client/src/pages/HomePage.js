@@ -52,7 +52,8 @@ class HomePage extends React.Component {
         <div style={{ backgroundColor: '#BFFFD1', width: '100vw', margin: '0 auto', marginTop: '0vh' }}>
         <br/>
         <div style={{ textAlign: 'center' }}><h3>All Companies</h3>
-          <p><b>Choose a Sector: </b><Select defaultValue="Communication Services" style={{ width: 200 }} onChange={this.sectorOnChange}>
+          <p><b>Choose a Sector: </b>
+          <Select defaultValue="--------------- Select ---------------" style={{ width: '20vw' }} onChange={this.sectorOnChange}>
             <Option value="Communication Services">Communication Services</Option>
             <Option value="Consumer Discretionary">Consumer Discretionary</Option>
             <Option value="Consumer Staples">Consumer Staples</Option>
