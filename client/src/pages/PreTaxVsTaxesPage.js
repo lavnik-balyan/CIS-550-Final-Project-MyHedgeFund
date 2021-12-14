@@ -7,7 +7,7 @@ import {
     Row,
     Col,
     Divider,
-
+    Select,
 } from 'antd'
 
 import { preTaxVsTaxes } from '../fetcher'
@@ -15,6 +15,8 @@ import { preTaxVsTaxes } from '../fetcher'
 import MenuBar from '../components/MenuBar';
 
 const { Column, ColumnGroup } = Table;
+
+const { Option } = Select;
 
 class PreTaxVsTaxesPage extends React.Component {
     constructor(props) {
@@ -37,7 +39,7 @@ class PreTaxVsTaxesPage extends React.Component {
     }
 
     handleSectorQueryChange(event) {
-        this.setState({ sectorQuery: event.target.value })
+        this.setState({ sectorQuery: event })
     }
 
     handleYear1QueryChange(event) {
@@ -85,7 +87,20 @@ class PreTaxVsTaxesPage extends React.Component {
                         </FormGroup></Col>
                         <Col flex={2}><FormGroup style={{ width: '20vw', margin: '0 auto' }}>
                             <label>Sector</label>
-                            <FormInput placeholder="Sector" value={this.state.sectorQuery} onChange={this.handleSectorQueryChange} />
+                            <br />
+                            <Select defaultValue="--------------- Select ---------------" style={{ width: '20vw', position: 'absolute', bottom: '0px' }} onChange={this.handleSectorQueryChange}>
+                                <Option value="Communication Services">Communication Services</Option>
+                                <Option value="Consumer Discretionary">Consumer Discretionary</Option>
+                                <Option value="Consumer Staples">Consumer Staples</Option>
+                                <Option value="Energy">Energy</Option>
+                                <Option value="Financials">Financials</Option>
+                                <Option value="Health Care">Health Care</Option>
+                                <Option value="Industrials">Industrials</Option>
+                                <Option value="Information Technology">Information Technology</Option>
+                                <Option value="Materials">Materials</Option>
+                                <Option value="Real Estate">Real Estate</Option>
+                                <Option value="Utilities">Utilities</Option>
+                            </Select>
                         </FormGroup></Col>
                         <Col flex={2}><FormGroup style={{ width: '10vw', margin: '0 auto' }}>
                             <Button style={{ width: "80%", position: 'absolute', bottom: '0px' }} onClick={this.updateSearchResults}>Search</Button>
