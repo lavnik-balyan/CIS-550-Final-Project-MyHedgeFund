@@ -14,6 +14,8 @@ Nicholas Schell - nschell@sas.upenn.edu
 
 ## Deployment Instructions:
 
+The data is included and must be uploaded to a database, and the credentials must be entered in the relevant files.
+
 1) Open the project code in Microsoft Visual Studio Code.
 2) cd into server and run 'npm install' and 'npm start' in the command line/terminal
 3) cd into client and run 'npm install' and 'npm start' in the command line/terminal
